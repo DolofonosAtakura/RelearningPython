@@ -1,6 +1,6 @@
 file = ""
 
-#translates a user CSV to a dictionary, currently requires a blank line at the bottom to function, can add try/except to fix
+#translates a user CSV to a dictionary, works with or without blank line at bottom in testing
 def usersCSVtoDict(infile):
     d = dict()
 
