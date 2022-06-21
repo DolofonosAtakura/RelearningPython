@@ -1,5 +1,3 @@
-file = ""
-
 #translates a user CSV to a dictionary, works with or without blank line at bottom in testing
 def usersCSVtoDict(infile):
     d = dict()
@@ -23,6 +21,7 @@ def usersCSVtoDict(infile):
     return d
 
 def main():
+    file = "userinfo.csv"
     q = usersCSVtoDict(file)
     print(q)
 
