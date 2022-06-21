@@ -1,0 +1,6 @@
+Username,Email,Position,Salary,Exempt,Contractor,Phone,Location
+jbob,jbob@test.com,Engineer,70000,no,no,,Remote
+bjoe,bjoe@test.com,Manager,90000,yes,no,5555556942,Remote
+ataco,ataco@test.com,Engineer,169000,no,no,,Remote
+aburrito,aburrito@test.com,CEO,420000,yes,no,5555694200,Houston
+jshmoe,jshmoe@test.com,Assistant,20000,no,yes,,Houston

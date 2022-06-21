@@ -1,0 +1,19 @@
+{
+    "Users":{
+        "User0":{
+            "username":"jbob",
+            "email":"jbob@test.com",
+            "position":"Engineer",
+            "salary":"70000"
+        },
+        "User1":{
+            "username":"bjoe",
+            "email":"bjoe@test.com",
+            "position":"Manager",
+            "salary":"90000"
+        }
+    },
+    "Groups":{
+        "name":"groupslul"
+    }
+}
