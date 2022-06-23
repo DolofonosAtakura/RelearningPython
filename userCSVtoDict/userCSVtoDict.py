@@ -39,7 +39,6 @@ def usersChanged(infile):
 
     slist = fileInfo.split()
     del a, fileInfo
-    count = 0
     keys = slist[0].lower().strip().split(",")
 
     for i in range(1,len(slist)):
