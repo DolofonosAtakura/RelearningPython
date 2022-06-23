@@ -51,7 +51,7 @@ def usersChanged(infile):
             d[f"User{ind}"].update({f"{keys[j]}":r[j]})
         
     # print(time.perf_counter()-start)
-    return(d)
+    return d
 
 
 def main():
