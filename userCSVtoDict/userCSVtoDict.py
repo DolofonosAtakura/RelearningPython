@@ -37,7 +37,7 @@ def usersChanged(infile):
     with open(infile) as a:
         fileInfo = a.read()
 
-    slist = fileInfo.split()
+    slist = fileInfo.split("\n")
     del a, fileInfo
     keys = slist[0].lower().strip().split(",")
 
