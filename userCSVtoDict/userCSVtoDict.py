@@ -1,7 +1,7 @@
 # to-do: 
 # not do a users sub array so you can look up usernames afterwards
 
-import time
+# import time
 # ^removed because i was curious on code speed:
 # usersCSVtoDict: 0.0013560000000000013
 # usersChanged:   0.00012119999999999839
@@ -54,7 +54,7 @@ def users2(infile):
     return d
 
 def users3(infile):
-    start = time.perf_counter()
+    # start = time.perf_counter()
     with open(infile) as a:
         slist = a.read().split("\n")
     
@@ -70,18 +70,21 @@ def users3(infile):
             d[r[0]].update({f"{keys[j]}":r[j]})
 
 
-    print(time.perf_counter()-start)
+    # print(time.perf_counter()-start)
     return d
 
 
 def main():
     file = "userinfo.csv"
     
-    # q1 = usersCSVtoDict(file)
-    # q2 = users2(file)
-    q3 = users3(file)
+    q1 = usersCSVtoDict(file)
+    print(q1)
     
-    #print(q3)
+    q2 = users2(file)
+    print(q2)
+    
+    q3 = users3(file)
+    print(q3)
 
 if __name__ == '__main__':
     main()
