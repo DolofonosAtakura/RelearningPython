@@ -1,11 +1,12 @@
 # to-do: 
 # not do a users sub array so you can look up usernames afterwards
 
-# import time
+import time
 # ^removed because i was curious on code speed:
 # usersCSVtoDict: 0.0013560000000000013
 # usersChanged:   0.00012119999999999839
-# roughly 10x faster
+# users3:         0.00011780000000000124
+# unsure why users3 is so much slower than users2
 
 # translates a user CSV to a dictionary, currently requires a blank line at the bottom to function, can add try/except to fix
 def usersCSVtoDict(infile):
@@ -30,7 +31,7 @@ def usersCSVtoDict(infile):
     # print(time.perf_counter()-start)
     return d
 
-def usersChanged(infile):
+def users2(infile):
     # start = time.perf_counter()
     d = dict()
 
@@ -52,15 +53,35 @@ def usersChanged(infile):
     # print(time.perf_counter()-start)
     return d
 
+def users3(infile):
+    start = time.perf_counter()
+    with open(infile) as a:
+        slist = a.read().split("\n")
+    
+    del a
+    d = dict()
+    keys = slist[0].lower().strip().split(",")
+
+    for i in range(1,len(slist)):
+        r = slist[i].split(",")
+        d.update({f"{r[0]}":{}})
+
+        for j in range(0,len(keys)):
+            d[r[0]].update({f"{keys[j]}":r[j]})
+
+
+    print(time.perf_counter()-start)
+    return d
+
 
 def main():
     file = "userinfo.csv"
-    q1 = usersCSVtoDict(file)
-    q2 = usersChanged(file)
-    if q1 == q2:
-        print(q1)
-    else:
-        print("not the same")
+    
+    # q1 = usersCSVtoDict(file)
+    # q2 = users2(file)
+    q3 = users3(file)
+    
+    #print(q3)
 
 if __name__ == '__main__':
     main()
